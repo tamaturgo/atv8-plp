@@ -19,12 +19,12 @@ public abstract class User {
     public void logout() {
         try (Scanner scanner = new Scanner(System.in)) {
             try {
-                System.out.println("Enter your password: ");
+                System.out.println("Para sair digite sua senha: ");
                 String res = scanner.nextLine();
                 if (!res.equals(password)) {
-                    throw new Exception("Wrong password");
+                    throw new Exception("Senha incorreta!");
                 }
-                System.out.println("User " + userName + " logged out");
+                System.out.println("Usuário " + userName + " saiu.");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -50,7 +50,7 @@ public abstract class User {
 
     public void ListMyPodcasts() {
         for (Podcast podcast : myPodcasts) {
-            System.out.println(myPodcasts.indexOf(podcast) + " + " + podcast.getName());
+            System.out.println(myPodcasts.indexOf(podcast) + " - " + podcast.getName());
         }
     }
 

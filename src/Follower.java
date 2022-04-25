@@ -7,12 +7,12 @@ public class Follower extends User{
         this.username = username;
     }
 
-    // Method which notifies the user if there is a new episode
+    // Método que notifica novo episódio
     public void update(String podcastName) {
-        System.out.println("New podcast from " + podcastName + " is available!");
+        System.out.println("Novo episódio de " + podcastName + " está disponível!");
     }
 
-    // Method which add the follower itself to the podcast's list of followers
+    // Método que adiciona o usuário à lista de inscritos de um podcast
     public void subscribe(Podcast podcast) {
         subscriptions.add(podcast);
         podcast.addFollowers(this);

@@ -10,17 +10,17 @@ public class Admin extends User {
     }
 
     public void banUser(Follower follower) {
-        System.out.println("Do you wish to ban " + follower.getUsername() + "? (y/n)");
-        if (new Scanner(System.in).nextLine().equals("y")) {
+        System.out.println("Deseja banir " + follower.getUsername() + "? (s/n)");
+        if (new Scanner(System.in).nextLine().equals("s")) {
             try {
-                System.out.println("Enter your password: ");
+                System.out.println("Digite sua senha: ");
                 String res = new Scanner(System.in).nextLine();
                 if (res.equals(password)) {
-                    System.out.println("User " + follower.getUsername() + " banned");
+                    System.out.println("Usuário " + follower.getUsername() + " banido!");
                     follower = null;
                     System.gc();
                 } else {
-                    throw new Exception("Wrong password");
+                    throw new Exception("Senha incorreta!");
                 }
 
             } catch (Exception e) {
